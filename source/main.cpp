@@ -6,7 +6,7 @@
 using std::string;
 
 int main(void) {
-  string name = "Gwen";
+  string name("Gwen");
   greet(name);
   dllist<int> list;
 }

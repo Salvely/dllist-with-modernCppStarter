@@ -1,1 +1,3 @@
-void greet(char* name);
+#include <string>
+using std::string;
+void greet(string name);
