@@ -1,0 +1,5 @@
+- [x] run.sh
+- [ ] CMakeLists.txt
+- [ ] test directory
+- [ ] source directory
+- [ ] include directory
