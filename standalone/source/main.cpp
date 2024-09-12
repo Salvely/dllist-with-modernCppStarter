@@ -36,7 +36,7 @@ auto main(int argc, char** argv) -> int {
     }
 
     if (result["version"].as<bool>()) {
-        std::cout << "Dllist, version " << GREETER_VERSION << std::endl;
+        std::cout << "Dllist, version " << DLLIST_VERSION << std::endl;
         return 0;
     }
 

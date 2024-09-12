@@ -2,7 +2,6 @@
 #include <dllist/version.h>
 #include <doctest/doctest.h>
 
-
 #include <string>
 
 TEST_CASE("Dllist") {
@@ -17,6 +16,6 @@ TEST_CASE("Dllist") {
 }
 
 TEST_CASE("Dllist version") {
-    static_assert(std::string_view(GREETER_VERSION) == std::string_view("1.0"));
-    CHECK(std::string(GREETER_VERSION) == std::string("1.0"));
+    static_assert(std::string_view(DLLIST_VERSION) == std::string_view("1.0"));
+    CHECK(std::string(DLLIST_VERSION) == std::string("1.0"));
 }
