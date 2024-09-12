@@ -1,7 +1,6 @@
 #include <dllist/dllist.h>
 #include <fmt/format.h>
 
-
 using namespace dllist;
 
 Dllist::Dllist(std::string _name): name(std::move(_name)) {}
