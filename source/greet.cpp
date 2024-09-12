@@ -1,5 +1,10 @@
 #include "static/greet.h"
 
-#include <stdio.h>
+#include <iostream>
+#include <string>
 
-void greet(char *name) { printf("Hello %s\n", name); }
+using std::cout;
+using std::endl;
+using std::string;
+
+void greet(string name) { cout << "Hello " << name << endl; }
