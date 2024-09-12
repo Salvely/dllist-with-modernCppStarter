@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "greet.h"
 #include "static/dllist.hpp"
+#include "static/greet.h"
 
 int main(void) {
   char* name = "Gwen";
