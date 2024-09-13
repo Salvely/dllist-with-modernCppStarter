@@ -101,5 +101,14 @@ TEST_CASE("insert back and delete back test") {
 
 TEST_CASE("insert item and delete item test") {
   dllist<int> dllist;
-  // insert at the front
+  MESSAGE("Insert 0,1,2,3,4 to the list");
+  for (int i = 0; i < 5; i++) {
+    dllist.insert_item(i, i);
+  }
+  dllist.print_list();
+  MESSAGE("Delete 0,1,2,3,4 from the list");
+  for (int i = 0; i < 5; i++) {
+    int val = dllist.delete_item(0);
+    CHECK(val == i);
+  }
 }

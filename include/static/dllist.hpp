@@ -75,17 +75,21 @@ template <typename E> inline void dllist<E>::insert_back(E val) {
 }
 
 template <typename E> inline void dllist<E>::insert_item(E val, int index) {
+  if (index >= size) {
+    this->insert_back(val);
+    return;
+  }
   node_t* new_node = new node_t;
   new_node->val = val;
-  new_node->prev = nullptr;
-  new_node->next = nullptr;
+  new_node->prev = new_node;
+  new_node->next = new_node;
 
   node_t* p = head;
   while (index > 0) {
     p = p->next;
     index -= 1;
   }
-  new_node->next = p->next;
+  new_node->next = p;
   new_node->prev = p->prev;
   p->prev->next = new_node;
   p->prev = new_node;
@@ -120,16 +124,16 @@ template <typename E> inline E dllist<E>::delete_back() {
 
 template <typename E> inline E dllist<E>::delete_item(int index) {
   if (index >= size) {
-    return -1;
+    return this->delete_back();
   }
   node_t* p = head;
-  for (int i = 0; i < index; i++) {
+  for (int i = index; i > 0; i--) {
     p = p->next;
   }
   p->prev->next = p->next;
   p->next->prev = p->prev;
   E val = p->val;
-  free(p);
+  delete p;
   size -= 1;
   return val;
 }
