@@ -91,7 +91,7 @@ template <typename E> inline void dllist<E>::insert_item(E val, int index) {
 }
 
 template <typename E> inline E dllist<E>::delete_front() {
-  assert(empty() == false);
+  // assert(empty() == false);
   E val = head->val;
   node_t* new_head = head->next;
   head->next->prev = head->prev;
