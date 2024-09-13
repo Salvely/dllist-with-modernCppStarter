@@ -96,11 +96,9 @@ template <typename E> inline E dllist<E>::delete_front() {
   node_t* new_head = head->next;
   if (head->next != nullptr) {
     head->next->prev = head->prev;
-    head->next = nullptr;
   }
   if (head->prev != nullptr) {
     head->prev->next = head->next;
-    head->prev = nullptr;
   }
   delete head;
   head = new_head;
