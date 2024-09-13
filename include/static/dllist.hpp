@@ -68,6 +68,8 @@ template <typename E> inline void dllist<E>::insert_back(E val) {
     new_node->prev = head->prev;
     head->prev->next = new_node;
     head->prev = new_node;
+  } else {
+    head = new_node;
   }
   size += 1;
 }
