@@ -20,7 +20,6 @@ TEST_CASE("Initialization test") {
 TEST_SUITE("insert front and delete front test") {
   dllist<int> dllist;
 
-  // SUBCASE("test insert front") {
   INFO("insert 5 numbers to the list at the front");
   for (int i = 0; i < 5; i++) {
     dllist.insert_front(i);
@@ -29,12 +28,10 @@ TEST_SUITE("insert front and delete front test") {
   REQUIRE(dllist.get_size() == 5);
   INFO("assert that empty() returns false");
   REQUIRE(dllist.empty() == false);
-  // }
 
   INFO("dllist: ");
   dllist.print_list();
 
-  // SUBCASE("test delete front") {
   REQUIRE(dllist.empty() == false);
   INFO("delete from the front");
   for (int i = 0; i < 5; i++) {
@@ -47,7 +44,6 @@ TEST_SUITE("insert front and delete front test") {
   REQUIRE(dllist.empty() == true);
   INFO("dllist: ");
   dllist.print_list();
-  // }
 }
 
 TEST_CASE("insert back and delete back test") {
