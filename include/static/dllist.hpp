@@ -47,7 +47,7 @@ template <typename E> inline dllist<E>::~dllist() {
 
 template <typename E> inline void dllist<E>::insert_front(E val) {
   node_t* new_node = new node_t;
-  new_node->next = new_node->prev = nullptr;
+  new_node->next = new_node->prev = new_node;
   new_node->val = val;
   if (head) {
     new_node->next = head;
