@@ -108,7 +108,7 @@ TEST_CASE("insert item and delete item test") {
   dllist.print_list();
   MESSAGE("Delete 0,1,2,3,4 from the list");
   for (int i = 0; i < 5; i++) {
-    int val = dllist.delete_item(0);
+    int val = dllist.delete_item(i);
     CHECK(val == i);
   }
 }
