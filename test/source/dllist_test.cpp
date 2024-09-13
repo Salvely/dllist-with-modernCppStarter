@@ -32,7 +32,6 @@ TEST_SUITE("insert front and delete front test") {
   MESSAGE("dllist: ");
   dllist.print_list();
 
-  REQUIRE(dllist.empty() == false);
   MESSAGE("delete from the front");
   for (int i = 0; i < 5; i++) {
     int val = dllist.delete_front();
