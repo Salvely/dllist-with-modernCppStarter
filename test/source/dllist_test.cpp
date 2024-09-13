@@ -6,8 +6,8 @@
 TEST_CASE("Initialization test") {
   dllist<int> dllist;
   INFO("initiliaze a new dllist");
-  // assert that the head is NULL
-  REQUIRE(dllist.get_head() == NULL);
+  // assert that the head is nullptr
+  REQUIRE(dllist.get_head() == nullptr);
   // assert that the size = 0
   SUBCASE("size test") { REQUIRE(dllist.get_size() == 0); }
   // assert that empty() returns true
@@ -20,8 +20,8 @@ TEST_CASE("Initialization test") {
 TEST_CASE("insert front and delet front test") {
   dllist<int> dllist;
 
-  INFO("test that delete from empty list returns NULL");
-  CHECK(dllist.delete_front() == NULL);
+  INFO("test that delete from empty list returns nullptr");
+  CHECK(dllist.delete_front() == nullptr);
 
   INFO("insert 5 numbers to the list at the front");
   for (int i = 0; i < 5; i++) {
@@ -63,12 +63,10 @@ TEST_CASE("insert item and delete item test") {
 
 TEST_CASE("modify test") { dllist<int> dllist; }
 
-TEST_CASE("integration test") { dllist<int> dllist; }
-
 TEST_CASE("Destructor test") {
   dllist<int> dllist;
   INFO("initiliaze a new dllist");
-  // assert that the head is NULL
+  // assert that the head is nullptr
   // assert that the size = 0
   // assert that empty() returns true
 }
