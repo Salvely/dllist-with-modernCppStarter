@@ -60,10 +60,43 @@ TEST_CASE("insert front and delete front test") {
 
 TEST_CASE("insert back and delete back test") {
   dllist<int> dllist;
-  // MESSAGE("insert 5 numbers to the list at the back");
-  // MESSAGE("assert that the size = 5");
-  // MESSAGE("assert that empty() returns false");
-  // MESSAGE("dllist: ");
+
+  MESSAGE("insert 5 numbers to the list at the back");
+  for (int i = 0; i < 5; i++) {
+    dllist.insert_back(i);
+  }
+  MESSAGE("assert that the size = 5");
+  REQUIRE(dllist.get_size() == 5);
+  MESSAGE("assert that empty() returns false");
+  REQUIRE(dllist.empty() == false);
+
+  MESSAGE("dllist: ");
+  dllist.print_list();
+
+  MESSAGE("test modify: ");
+  for (int i = 0; i < 5; i++) {
+    dllist.modify(i, i + 10);
+  }
+
+  MESSAGE("dllist: ");
+  dllist.print_list();
+
+  MESSAGE("delete from the back");
+  for (int i = 0; i < 5; i++) {
+    int val = dllist.delete_back();
+    MESSAGE("deleted ", val);
+  }
+  MESSAGE("assert that the size = 0");
+  REQUIRE(dllist.get_size() == 0);
+  MESSAGE("assert that empty() returns true");
+  REQUIRE(dllist.empty() == true);
+  MESSAGE("dllist: ");
+  dllist.print_list();
+
+  MESSAGE("Destruct the dllist");
+  dllist.~dllist();
+  CHECK(dllist.get_size() == 0);
+  CHECK(dllist.empty() == true);
 }
 
 TEST_CASE("insert item and delete item test") {
