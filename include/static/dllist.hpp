@@ -133,6 +133,7 @@ template <typename E> inline E dllist<E>::delete_item(int index) {
   p->prev->next = p->next;
   p->next->prev = p->prev;
   E val = p->val;
+  head = p->next;
   delete p;
   size -= 1;
   return val;
