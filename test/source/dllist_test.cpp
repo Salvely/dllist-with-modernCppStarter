@@ -17,7 +17,7 @@ TEST_CASE("Initialization test") {
   dllist.print_list();
 }
 
-TEST_SUITE("insert front and delete front test") {
+TEST_CASE("insert front and delete front test") {
   dllist<int> dllist;
 
   MESSAGE("insert 5 numbers to the list at the front");
@@ -28,6 +28,14 @@ TEST_SUITE("insert front and delete front test") {
   REQUIRE(dllist.get_size() == 5);
   MESSAGE("assert that empty() returns false");
   REQUIRE(dllist.empty() == false);
+
+  MESSAGE("dllist: ");
+  dllist.print_list();
+
+  MESSAGE("test modify: ");
+  for (int i = 0; i < 5; i++) {
+    dllist.modify(i, i + 10);
+  }
 
   MESSAGE("dllist: ");
   dllist.print_list();
@@ -44,8 +52,6 @@ TEST_SUITE("insert front and delete front test") {
   MESSAGE("dllist: ");
   dllist.print_list();
 }
-
-TEST_CASE("modify test") { dllist<int> dllist; }
 
 TEST_CASE("insert back and delete back test") {
   dllist<int> dllist;
