@@ -34,15 +34,15 @@ TEST_CASE("insert front and delete front test") {
   INFO("delete from the front");
   for (int i = 0; i < 5; i++) {
     dllist.delete_front();
-    // INFO("dllist after deleting front: ");
-    // dllist.print_list();
+    INFO("dllist after deleting front: ");
+    dllist.print_list();
   }
   INFO("assert that the size = 0");
   REQUIRE(dllist.get_size() == 0);
   INFO("assert that empty() returns true");
   REQUIRE(dllist.empty() == true);
-  // INFO("dllist: ");
-  // dllist.print_list();
+  INFO("dllist: ");
+  dllist.print_list();
 }
 
 TEST_CASE("insert back and delete back test") {

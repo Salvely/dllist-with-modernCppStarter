@@ -66,7 +66,7 @@ template <typename E> inline void dllist<E>::insert_back(E val) {
   if (head) {
     new_node->next = head;
     new_node->prev = head->prev;
-    head->prev->next = new_node;
+    if (head->prev != nullptr) head->prev->next = new_node;
     head->prev = new_node;
   }
   size += 1;
@@ -93,8 +93,8 @@ template <typename E> inline void dllist<E>::insert_item(E val, int index) {
 template <typename E> inline E dllist<E>::delete_front() {
   assert(empty() == false);
   E val = head->val;
-  head->next->prev = head->prev;
-  head->prev->next = head->next;
+  if (head->next != nullptr) head->next->prev = head->prev;
+  if (head->prev != nullptr) head->prev->next = head->next;
   node_t* new_head = head->next;
   delete head;
   head = new_head;
