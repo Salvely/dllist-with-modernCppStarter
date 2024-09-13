@@ -20,9 +20,6 @@ TEST_CASE("Initialization test") {
 TEST_CASE("insert front and delete front test") {
   dllist<int> dllist;
 
-  // INFO("assert that we cannot delete front when list is empty.");
-  // CHECK_THROWS(dllist.delete_front());
-
   INFO("insert 5 numbers to the list at the front");
   for (int i = 0; i < 5; i++) {
     dllist.insert_front(i);
@@ -38,7 +35,7 @@ TEST_CASE("insert front and delete front test") {
   for (int i = 0; i < 5; i++) {
     dllist.delete_front();
     INFO("dllist after deleting front: ");
-    dllist.print_list();
+    // dllist.print_list();
   }
   INFO("assert that the size = 0");
   REQUIRE(dllist.get_size() == 0);
