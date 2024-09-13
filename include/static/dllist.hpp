@@ -24,6 +24,7 @@ public:
   bool empty();
   int get_size();
   void print_list();
+  node_t* get_head();
 };
 
 template <typename E> inline dllist<E>::dllist() {
@@ -150,7 +151,9 @@ template <typename E> inline int dllist<E>::get_size() { return size; }
 template <typename E> inline void dllist<E>::print_list() {
   node_t* p = head;
   for (int i = 0; i < size; i++) {
-    std::cout << p->val << " " << std::endl;
+    std::cout << p->val << " ";
     p = p->next;
   }
 }
+
+template <typename E> inline typename dllist<E>::node_t* dllist<E>::get_head() { return head; }
