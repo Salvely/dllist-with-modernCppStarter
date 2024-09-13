@@ -51,6 +51,11 @@ TEST_CASE("insert front and delete front test") {
   REQUIRE(dllist.empty() == true);
   MESSAGE("dllist: ");
   dllist.print_list();
+
+  MESSAGE("Destruct the dllist");
+  dllist.~dllist();
+  CHECK(dllist.get_size() == 0);
+  CHECK(dllist.empty() == true);
 }
 
 TEST_CASE("insert back and delete back test") {
@@ -64,12 +69,4 @@ TEST_CASE("insert back and delete back test") {
 TEST_CASE("insert item and delete item test") {
   dllist<int> dllist;
   // insert at the front
-}
-
-TEST_CASE("Destructor test") {
-  dllist<int> dllist;
-  MESSAGE("initiliaze a new dllist");
-  // assert that the head is nullptr
-  // assert that the size = 0
-  // assert that empty() returns true
 }

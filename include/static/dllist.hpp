@@ -39,7 +39,7 @@ template <typename E> inline dllist<E>::~dllist() {
   node_t* current = head;
   while (size != 0) {
     node_t* next = current->next;
-    free(current);
+    delete current;
     current = next;
     size -= 1;
   }
