@@ -29,9 +29,10 @@ TEST_CASE("insert front and delete front test") {
     REQUIRE(dllist.get_size() == 5);
     INFO("assert that empty() returns false");
     REQUIRE(dllist.empty() == false);
-    INFO("dllist: ");
-    dllist.print_list();
   }
+
+  INFO("dllist: ");
+  dllist.print_list();
 
   SUBCASE("test delete front") {
     INFO("delete from the front");

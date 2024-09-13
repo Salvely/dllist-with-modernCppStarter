@@ -100,9 +100,12 @@ template <typename E> inline E dllist<E>::delete_front() {
   if (head->prev != nullptr) {
     head->prev->next = head->next;
   }
-  // delete head;
-  if (size != 1) head = new_head;
+  delete head;
   size -= 1;
+  if (size != 0)
+    head = new_head;
+  else
+    head = nullptr;
   return val;
 }
 
