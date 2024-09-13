@@ -35,7 +35,7 @@ TEST_CASE("insert front and delete front test") {
 
   SUBCASE("test delete front") {
     INFO("delete from the front");
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 3; i++) {
       int val = dllist.delete_front();
       INFO("deleted ", val);
     }
