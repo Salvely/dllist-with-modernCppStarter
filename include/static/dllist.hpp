@@ -88,6 +88,9 @@ template <typename E> inline void dllist<E>::insert_item(E val, int index) {
 }
 
 template <typename E> inline E dllist<E>::delete_front() {
+  if (empty()) {
+    return NULL;
+  }
   E val = head->val;
   head->next->prev = head->prev;
   head->prev->next = head->next;
@@ -99,6 +102,9 @@ template <typename E> inline E dllist<E>::delete_front() {
 }
 
 template <typename E> inline E dllist<E>::delete_back() {
+  if (empty()) {
+    return NULL;
+  }
   node_t* p = head;
   if (!p->prev) {
     return -1;

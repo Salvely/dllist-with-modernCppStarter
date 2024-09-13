@@ -7,11 +7,11 @@ TEST_CASE("Initialization test") {
   dllist<int> dllist;
   INFO("initiliaze a new dllist");
   // assert that the head is NULL
-  REQUIRE(dllist.get_head(), NULL);
+  REQUIRE(dllist.get_head() == NULL);
   // assert that the size = 0
-  SUBCASE("size test") { REQUIRE(dllist.get_size(), 0); }
+  SUBCASE("size test") { REQUIRE(dllist.get_size() == 0); }
   // assert that empty() returns true
-  SUBCASE("empty test") { REQUIRE(dllist.empty(), true); }
+  SUBCASE("empty test") { REQUIRE_TRUE(dllist.empty() == true); }
   // print list
   INFO("The dllist: ");
   dllist.print_list();
@@ -19,14 +19,18 @@ TEST_CASE("Initialization test") {
 
 TEST_CASE("insert front and delet front test") {
   dllist<int> dllist;
+
+  INFO("test that delete from empty list returns NULL");
+  CHECK(dllist.delete_front() == NULL);
+
   INFO("insert 5 numbers to the list at the front");
   for (int i = 0; i < 5; i++) {
     dllist.insert_front(i);
   }
   INFO("assert that the size = 5");
-  REQUIRE(dllist.size(), 5);
+  REQUIRE(dllist.size() == 5);
   INFO("assert that empty() returns false");
-  REQUIRE(dllist.empty(), false);
+  REQUIRE(dllist.empty() == false);
   INFO("dllist: ");
   dllist.print_list();
 
@@ -37,19 +41,19 @@ TEST_CASE("insert front and delet front test") {
     dllist.print_list();
   }
   INFO("assert that the size = 0");
-  REQUIRE(dllist.size(), 0);
+  REQUIRE(dllist.size() == 0);
   INFO("assert that empty() returns true");
-  REQUIRE(dllist.empty(), true);
+  REQUIRE(dllist.empty() == true);
   INFO("dllist: ");
   dllist.print_list();
 }
 
 TEST_CASE("insert back and delete back test") {
   dllist<int> dllist;
-  // insert 5 numbers to the list at the back
-  // assert that the size = 5
-  // assert that empty() returns false
-  // print list
+  // INFO("insert 5 numbers to the list at the back");
+  // INFO("assert that the size = 5");
+  // INFO("assert that empty() returns false");
+  // INFO("dllist: ");
 }
 
 TEST_CASE("insert item and delete item test") {
